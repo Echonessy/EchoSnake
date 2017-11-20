@@ -11,7 +11,11 @@ window.EchoSnake = (function () {
         Config:function (params) {
             this.Ele = document.querySelector(params.Ele); // 绑定元素
             this.Start = document.querySelector(params.Start); // 开始按钮
-            this.Matrix = params.Matrix; // 矩阵大小
+            if(params.Matrix<10) {
+                this.Matrix = 10
+            } else {
+                this.Matrix = params.Matrix; // 矩阵大小
+            }
             this.NowDirection = 2; // 当前方向
             this.NextDirection = ''; // 下一个方向
             this.Time = [400,300,250,200,150,100]; // 贪食蛇速度集合
@@ -24,7 +28,6 @@ window.EchoSnake = (function () {
             this.Timer = null; // 计时器
             this.Food = []; // 记录食物坐标
             this.Init() // 初始化
-
         },
         // 初始化
         Init:function () {
@@ -37,7 +40,7 @@ window.EchoSnake = (function () {
         //创建坐标
         CreateElement:function () {
             var Html = '';
-            Html+= '<ul  class="Element">'
+            Html+= '<ul  class="Element">';
             for (var i = 0;i< this.Matrix;i++) {
                 for(var j = 0;j< this.Matrix;j++) {
                     var DataX = j;
@@ -167,12 +170,12 @@ window.EchoSnake = (function () {
             if(this.Boundary(updown,leftright)) {
                 window.clearInterval(this.Timer);
                 console.log('边界碰撞');
-                this.ReStartGame()
+                this.ReStartGame();
                 document.getElementById(this.Result).innerHTML = 'Sorry,边界碰撞 '
             } else if(this.SelfCollide(updown,leftright)) {
                 window.clearInterval(this.Timer);
                 console.log('自身碰撞');
-                this.ReStartGame()
+                this.ReStartGame();
                 document.getElementById(this.Result).innerHTML = 'Sorry,自身碰撞 '
             }
             else {
@@ -209,15 +212,15 @@ window.EchoSnake = (function () {
         // 动态变化Html坐标
         SercherHtml:function () {
             for(var i = 0;i<this.EleLi.length;i++) {
-                this.EleLi[i].classList.remove('Choice')
-                this.EleLi[i].classList.remove('Header')
+                this.EleLi[i].classList.remove('Choice');
+                this.EleLi[i].classList.remove('Header');
             }
             for(var i=0;i<this.AnimateArr.length;i++) {
                 var x = this.AnimateArr[i][0];
                 var y = this.AnimateArr[i][1];
                 var Id = x.toString()+'-'+y.toString();
                 this.EleLiId = document.getElementById(Id);
-                if(i==this.AnimateArr.length-1) {
+                if(i===this.AnimateArr.length-1) {
                     this.EleLiId.className = 'Choice Header'
                 } else {
                     this.EleLiId.className = 'Choice'
