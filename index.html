@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EchoSnake</title>
+    <script src="js/EchoSnake.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<p class="Title">Echonessy -- 贪吃蛇</p>
+<div class="EleBox" id="Element"></div>
+<p class="Start" id="Start">开始</p>
+<script>
+    var Snake =  new EchoSnake();
+    Snake.Config({
+        Ele:'#Element', // 绑定元素主体
+        Start:'#Start', //启动按钮
+        Matrix: 20 // 矩阵大小
+    });
+</script>
+</body>
+</html>

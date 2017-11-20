@@ -1,0 +1,11 @@
+html,body{font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande";background: url("../img/bg.jpg")center center repeat;background-size: cover;}
+.Title{width: 100%;height: 40px;margin-top: 30px; line-height: 40px;color: white;text-align: center;font-size: 24px;}
+.EleBox{margin: 0 auto;}
+.Element{ overflow: hidden; margin: 30px auto;border: 2px solid #fff;}
+.Element>li{float: left;list-style: none;margin: 1px;  width: 18px;height: 18px;box-sizing: border-box;}
+.Start{width: 300px; line-height:35px;font-size: 16px;  height: 35px;margin: 20px auto;text-align: center;color: white;background: #00ce9f;border-radius: 10px;cursor: pointer;}
+.Start:active{box-shadow: 0 0 15px #666;}
+.Core{width: 100%;height: 40px;text-align: center; line-height: 40px;font-size: 18px;color: white;}
+.Choice{background: #0EBDBB!important;}
+.Header{background: #0df200!important;}
+.Food{background: #EE1B96!important;}
