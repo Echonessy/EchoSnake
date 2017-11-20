@@ -177,6 +177,11 @@ window.EchoSnake = (function () {
                 console.log('自身碰撞');
                 this.ReStartGame();
                 document.getElementById(this.Result).innerHTML = 'Sorry,自身碰撞 '
+            } else if(this.AnimateArr.length === (this.Matrix*this.Matrix)) {
+                window.clearInterval(this.Timer);
+                console.log('通关啦');
+                this.ReStartGame();
+                document.getElementById(this.Result).innerHTML = 'Congratulation！！！,通关啦！ '
             }
             else {
                 // 蛇的位移思路：每次移动一格，最后一个变化一次，
@@ -270,10 +275,10 @@ window.EchoSnake = (function () {
                     this.Difficulty = Math.floor(this.Score / 100) + 1 ; // 难度
                 }
             }
-            var Html = '分数：'+ this.Score +'  难度：'+this.Difficulty
+            var Html = '分数：'+ this.Score +'  难度：'+this.Difficulty;
             document.getElementById(this.ScoreId).innerHTML = Html;
             this.DifTime = this.Time[this.Difficulty-1];
-            window.clearInterval(this.Timer)
+            window.clearInterval(this.Timer);
             this.Gaming()
         }
     };
