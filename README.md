@@ -13,7 +13,7 @@ Js:
     Snake.Config({
         Ele:'#Element', // 绑定元素主体
         Start:'#Start', //启动按钮
-        Matrix: 20 // 矩阵大小为10 
+        Matrix: 20 // 矩阵大小为20*20 
     });
     
 ```
